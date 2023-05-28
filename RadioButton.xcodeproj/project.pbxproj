@@ -8,22 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		7B9810D62A236BB20082CD3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9810D52A236BB20082CD3B /* AppDelegate.swift */; };
-		7B9810D82A236BB30082CD3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9810D72A236BB30082CD3B /* SceneDelegate.swift */; };
 		7B9810DA2A236BB30082CD3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9810D92A236BB30082CD3B /* ViewController.swift */; };
-		7B9810DD2A236BB30082CD3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B9810DB2A236BB30082CD3B /* Main.storyboard */; };
 		7B9810DF2A236BB40082CD3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B9810DE2A236BB40082CD3B /* Assets.xcassets */; };
-		7B9810E22A236BB40082CD3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B9810E02A236BB40082CD3B /* LaunchScreen.storyboard */; };
+		7B9810EA2A236E1D0082CD3B /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9810E92A236E1D0082CD3B /* RadioButtonView.swift */; };
+		7B9810EC2A237A610082CD3B /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9810EB2A237A610082CD3B /* RadioButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7B9810D22A236BB20082CD3B /* RadioButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9810D52A236BB20082CD3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7B9810D72A236BB30082CD3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7B9810D92A236BB30082CD3B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7B9810DC2A236BB30082CD3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B9810DE2A236BB40082CD3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7B9810E12A236BB40082CD3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B9810E32A236BB40082CD3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B9810E92A236E1D0082CD3B /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
+		7B9810EB2A237A610082CD3B /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +55,10 @@
 			isa = PBXGroup;
 			children = (
 				7B9810D52A236BB20082CD3B /* AppDelegate.swift */,
-				7B9810D72A236BB30082CD3B /* SceneDelegate.swift */,
 				7B9810D92A236BB30082CD3B /* ViewController.swift */,
-				7B9810DB2A236BB30082CD3B /* Main.storyboard */,
+				7B9810E92A236E1D0082CD3B /* RadioButtonView.swift */,
+				7B9810EB2A237A610082CD3B /* RadioButton.swift */,
 				7B9810DE2A236BB40082CD3B /* Assets.xcassets */,
-				7B9810E02A236BB40082CD3B /* LaunchScreen.storyboard */,
 				7B9810E32A236BB40082CD3B /* Info.plist */,
 			);
 			path = RadioButton;
@@ -125,9 +122,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B9810E22A236BB40082CD3B /* LaunchScreen.storyboard in Resources */,
 				7B9810DF2A236BB40082CD3B /* Assets.xcassets in Resources */,
-				7B9810DD2A236BB30082CD3B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,32 +133,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B9810EA2A236E1D0082CD3B /* RadioButtonView.swift in Sources */,
 				7B9810DA2A236BB30082CD3B /* ViewController.swift in Sources */,
 				7B9810D62A236BB20082CD3B /* AppDelegate.swift in Sources */,
-				7B9810D82A236BB30082CD3B /* SceneDelegate.swift in Sources */,
+				7B9810EC2A237A610082CD3B /* RadioButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		7B9810DB2A236BB30082CD3B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7B9810DC2A236BB30082CD3B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		7B9810E02A236BB40082CD3B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7B9810E12A236BB40082CD3B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7B9810E42A236BB40082CD3B /* Debug */ = {
@@ -291,7 +268,6 @@
 				INFOPLIST_FILE = RadioButton/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,7 +294,6 @@
 				INFOPLIST_FILE = RadioButton/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
