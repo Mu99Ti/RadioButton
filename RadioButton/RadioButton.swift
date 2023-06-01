@@ -32,7 +32,7 @@ class RadioButton: UIButton {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
-        stackView.distribution = .fill
+        stackView.distribution = .fillProportionally
         stackView.alignment = .center
         stackView.spacing = 12
         return stackView
@@ -52,10 +52,10 @@ class RadioButton: UIButton {
         ])
         
         NSLayoutConstraint.activate([
-            mainStackview.topAnchor.constraint(equalTo: topAnchor),
             mainStackview.trailingAnchor.constraint(equalTo: trailingAnchor),
             mainStackview.bottomAnchor.constraint(equalTo: bottomAnchor),
-            mainStackview.leadingAnchor.constraint(equalTo: leadingAnchor)
+            mainStackview.centerXAnchor.constraint(equalTo: centerXAnchor)
+
         ])
         
         // MARK: - Configure View
@@ -92,7 +92,7 @@ class RadioButton: UIButton {
             mainStackview.addArrangedSubview(radioButtonImageView)
         }
         
-        backgroundColor = .systemBackground
+        backgroundColor = .clear
         radioButtonImageView.layer.cornerRadius = 12
         radioButtonImageView.image = UIImage(named: "RadioButton")
     }

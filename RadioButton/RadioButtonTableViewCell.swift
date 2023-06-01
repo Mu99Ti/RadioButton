@@ -21,10 +21,10 @@ class RadioButtonTableViewCell: UITableViewCell {
         radioButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            radioButton.topAnchor.constraint(equalTo: topAnchor),
-            radioButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            radioButton.bottomAnchor.constraint(equalTo: bottomAnchor),
-            radioButton.leadingAnchor.constraint(equalTo: leadingAnchor)
+            radioButton.topAnchor.constraint(equalTo: contentView.topAnchor),
+            radioButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            radioButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            radioButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
         ])
     }
     
