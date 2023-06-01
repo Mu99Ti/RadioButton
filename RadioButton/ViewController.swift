@@ -8,39 +8,50 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    // MARK: - Private Properties
     private lazy var radio = RadioButton()
-    private lazy var radio2 = RadioButton()
-    private lazy var radio3 = RadioButton()
-    private lazy var radio4 = RadioButton()
-    private lazy var radio5 = RadioButton()
-    private lazy var mainStack: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fillProportionally
-        stackView.spacing = 3
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
+    private lazy var radioButtonCell = RadioButtonTableViewCell()
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = .systemBackground
+        tableView.register(RadioButtonTableViewCell.self, forCellReuseIdentifier: RadioButtonTableViewCell.reuseIdentifier)
+        return tableView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
-        view.addSubview(mainStack)
-        
-        
-        mainStack.addArrangedSubview(radio)
-        mainStack.addArrangedSubview(radio2)
-        mainStack.addArrangedSubview(radio3)
-        mainStack.addArrangedSubview(radio4)
-        mainStack.addArrangedSubview(radio5)
+        view.backgroundColor = .systemBackground
+    
+        view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
-            mainStack.topAnchor.constraint(equalTo: view.topAnchor),
-            mainStack.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            mainStack.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            mainStack.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         ])
+    
     }
 }
 
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: RadioButtonTableViewCell.reuseIdentifier, for: indexPath)
+        return cell
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return radioButtonCell.frame.height
+    }
+}

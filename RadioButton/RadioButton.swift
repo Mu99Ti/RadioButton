@@ -7,42 +7,33 @@
 
 import UIKit
 
-class RadioButton: UIView {
+class RadioButton: UIButton {
     
     // MARK: - Private Properties
     private var allignment: RadioButton.Allignment = .LTR
-    private var selection: Bool = false
     private var highlightColor: UIColor? = .black
     private var highlightedButtonBorderWidth: CGFloat = 2
     
     private lazy var valueLabel: UILabel = {
         let label = UILabel()
         label.text = "testtesttest"
+        label.textAlignment = .center
         return label
     }()
     
-    private lazy var radioButton: UIButton = {
-        let button = UIButton()
-        button.layer.cornerRadius = frame.height/2
-        button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor(red: 207/255, green: 207/255, blue: 207/255, alpha: 1).cgColor
-        button.backgroundColor = .clear
-        return button
-    }()
-    
-    private lazy var radioButtonHighlitedButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(radioButtonTapped), for: .touchUpInside)
-        button.backgroundColor = .clear
-        return button
+    private lazy var radioButtonImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor = .clear
+        return imageView
     }()
     
     private lazy var mainStackview: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fill
+        stackView.alignment = .center
         stackView.spacing = 12
         return stackView
     }()
@@ -54,34 +45,21 @@ class RadioButton: UIView {
         // MARK: - Add Subviews
         addSubview(mainStackview)
         
-        radioButton.addSubview(radioButtonHighlitedButton)
+        // MARK: - Setup Constraint
+        NSLayoutConstraint.activate([
+            radioButtonImageView.widthAnchor.constraint(equalToConstant: 24),
+            radioButtonImageView.heightAnchor.constraint(equalToConstant: 24)
+        ])
         
-        // MARK: - Setup Constraints
-        let radioButtonSizeConstraints = [
-            radioButton.heightAnchor.constraint(equalToConstant: 24),
-            radioButton.widthAnchor.constraint(equalToConstant: 24)
-        ]
-        
-        let highlightedButtonConstraints = [
-            radioButtonHighlitedButton.centerXAnchor.constraint(equalTo: radioButton.centerXAnchor),
-            radioButtonHighlitedButton.centerYAnchor.constraint(equalTo: radioButton.centerYAnchor),
-            radioButtonHighlitedButton.heightAnchor.constraint(equalToConstant: 16),
-            radioButtonHighlitedButton.widthAnchor.constraint(equalToConstant: 16)
-        ]
-        
-        let mainStackViewConstraints = [
+        NSLayoutConstraint.activate([
             mainStackview.topAnchor.constraint(equalTo: topAnchor),
             mainStackview.trailingAnchor.constraint(equalTo: trailingAnchor),
             mainStackview.bottomAnchor.constraint(equalTo: bottomAnchor),
             mainStackview.leadingAnchor.constraint(equalTo: leadingAnchor)
-        ]
-        
-        
-        NSLayoutConstraint.activate(radioButtonSizeConstraints)
-        NSLayoutConstraint.activate(highlightedButtonConstraints)
-        NSLayoutConstraint.activate(mainStackViewConstraints)
+        ])
         
         // MARK: - Configure View
+        addTarget(self, action: #selector(radioButtonTapped), for: .touchUpInside)
         setup(allignment)
     }
     
@@ -105,26 +83,25 @@ class RadioButton: UIView {
         case .LTR:
             mainStackview.alignment = .leading
             valueLabel.textAlignment = .left
-            mainStackview.addArrangedSubview(radioButton)
+            mainStackview.addArrangedSubview(radioButtonImageView)
             mainStackview.addArrangedSubview(valueLabel)
         case .RTL:
             mainStackview.alignment = .trailing
             valueLabel.textAlignment = .right
             mainStackview.addArrangedSubview(valueLabel)
-            mainStackview.addArrangedSubview(radioButton)
+            mainStackview.addArrangedSubview(radioButtonImageView)
         }
         
         backgroundColor = .systemBackground
-        radioButton.layer.cornerRadius = 12
-        radioButtonHighlitedButton.layer.cornerRadius = 8
+        radioButtonImageView.layer.cornerRadius = 12
+        radioButtonImageView.image = UIImage(named: "RadioButton")
     }
     
     @objc
     private func radioButtonTapped() {
-        selection = true
-        radioButtonHighlitedButton.backgroundColor = .black
-        radioButton.layer.borderColor = UIColor.black.cgColor
-        radioButton.layer.borderWidth = highlightedButtonBorderWidth
+        radioButtonImageView.layer.borderColor = UIColor.black.cgColor
+        radioButtonImageView.layer.borderWidth = highlightedButtonBorderWidth
+        radioButtonImageView.image = UIImage(named: "RadioButton Selected")
     }
 }
 

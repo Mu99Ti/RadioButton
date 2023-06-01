@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B29AE572A2888FB0095A852 /* RadioButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B29AE562A2888FB0095A852 /* RadioButtonTableViewCell.swift */; };
 		7B9810D62A236BB20082CD3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9810D52A236BB20082CD3B /* AppDelegate.swift */; };
 		7B9810DA2A236BB30082CD3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9810D92A236BB30082CD3B /* ViewController.swift */; };
 		7B9810DF2A236BB40082CD3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B9810DE2A236BB40082CD3B /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B29AE562A2888FB0095A852 /* RadioButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonTableViewCell.swift; sourceTree = "<group>"; };
 		7B9810D22A236BB20082CD3B /* RadioButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9810D52A236BB20082CD3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B9810D92A236BB30082CD3B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 		7B9810D42A236BB20082CD3B /* RadioButton */ = {
 			isa = PBXGroup;
 			children = (
+				7B29AE562A2888FB0095A852 /* RadioButtonTableViewCell.swift */,
 				7B9810D52A236BB20082CD3B /* AppDelegate.swift */,
 				7B9810D92A236BB30082CD3B /* ViewController.swift */,
 				7B9810E92A236E1D0082CD3B /* RadioButtonView.swift */,
@@ -133,6 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B29AE572A2888FB0095A852 /* RadioButtonTableViewCell.swift in Sources */,
 				7B9810EA2A236E1D0082CD3B /* RadioButtonView.swift in Sources */,
 				7B9810DA2A236BB30082CD3B /* ViewController.swift in Sources */,
 				7B9810D62A236BB20082CD3B /* AppDelegate.swift in Sources */,

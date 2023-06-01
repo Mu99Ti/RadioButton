@@ -9,7 +9,9 @@ import UIKit
 
 class RadioButtonView: UIView {
     
+    // MARK: - Private Properties
     private lazy var radioButtonsArray: [RadioButton] = [RadioButton()]
+    
     private lazy var mainStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
